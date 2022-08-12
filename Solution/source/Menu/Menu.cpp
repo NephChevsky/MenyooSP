@@ -64,19 +64,19 @@ namespace MenuPressTimer
 			offsettedTime = GetTickCount() + 630;
 		}
 
-		if (IS_DISABLED_CONTROL_PRESSED(2, INPUT_FRONTEND_RIGHT) || IsKeyDown(VirtualKey::Numpad6))
+		if (IsKeyDown(VirtualKey::Numpad6))
 		{
 			currentButton = Button::Right;
 		}
-		else if (IS_DISABLED_CONTROL_PRESSED(2, INPUT_FRONTEND_LEFT) || IsKeyDown(VirtualKey::Numpad4))
+		else if (IsKeyDown(VirtualKey::Numpad4))
 		{
 			currentButton = Button::Left;
 		}
-		else if (IS_DISABLED_CONTROL_PRESSED(2, INPUT_FRONTEND_DOWN) || IsKeyDown(VirtualKey::Numpad2))
+		else if (IsKeyDown(VirtualKey::Numpad2))
 		{
 			currentButton = Button::Down;
 		}
-		else if (IS_DISABLED_CONTROL_PRESSED(2, INPUT_FRONTEND_UP) || IsKeyDown(VirtualKey::Numpad8))
+		else if (IsKeyDown(VirtualKey::Numpad8))
 		{
 			currentButton = Button::Up;
 		}
@@ -96,12 +96,12 @@ namespace MenuPressTimer
 		bool isTapped = true;
 		switch (button)
 		{
-		case Button::Right: isTapped = IS_DISABLED_CONTROL_JUST_PRESSED(2, INPUT_FRONTEND_RIGHT) || IsKeyJustUp(VirtualKey::Numpad6); break;
-		case Button::Left: isTapped = IS_DISABLED_CONTROL_JUST_PRESSED(2, INPUT_FRONTEND_LEFT) || IsKeyJustUp(VirtualKey::Numpad4); break;
-		case Button::Down: isTapped = IS_DISABLED_CONTROL_JUST_PRESSED(2, INPUT_FRONTEND_DOWN) || IsKeyJustUp(VirtualKey::Numpad2); break;
-		case Button::Up: isTapped = IS_DISABLED_CONTROL_JUST_PRESSED(2, INPUT_FRONTEND_UP) || IsKeyJustUp(VirtualKey::Numpad8); break;
-		case Button::Back: isTapped = IS_DISABLED_CONTROL_JUST_PRESSED(2, INPUT_FRONTEND_RRIGHT) || IsKeyJustUp(VirtualKey::Numpad0); break;
-		case Button::Accept: isTapped = IS_DISABLED_CONTROL_JUST_PRESSED(2, INPUT_FRONTEND_ACCEPT) || IsKeyJustUp(VirtualKey::Numpad5); break;
+		case Button::Right: isTapped = IsKeyJustUp(VirtualKey::Numpad6); break;
+		case Button::Left: isTapped = IsKeyJustUp(VirtualKey::Numpad4); break;
+		case Button::Down: isTapped = IsKeyJustUp(VirtualKey::Numpad2); break;
+		case Button::Up: isTapped = IsKeyJustUp(VirtualKey::Numpad8); break;
+		case Button::Back: isTapped = IsKeyJustUp(VirtualKey::Numpad0); break;
+		case Button::Accept: isTapped = IsKeyJustUp(VirtualKey::Numpad5); break;
 		}
 		return isTapped;
 	}
